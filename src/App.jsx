@@ -1,8 +1,8 @@
 import React from 'react';
-import { ThemeProvider } from './contexts/ThemeContext';
-import { FleetProvider } from './contexts/FleetContext';
-import { FavoritesProvider } from './contexts/FavoritesContext'; 
-import AppRoutes from './routes/AppRoutes';
+import { ThemeProvider } from './contexts/TemaContext';
+import { FleetProvider } from './contexts/FrotaContext';
+import { FavoritesProvider } from './contexts/FavoritosContext'; 
+import AppRoutes from './routes/index';
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
