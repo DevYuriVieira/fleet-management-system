@@ -3,23 +3,23 @@ import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from '../styles/Tema';
 import GlobalStyles from '../styles/GlobalStyle';
 
-export const ThemeContext = createContext();
+export const TemaContext = createContext();
 
-export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState('dark'); //esta iniciando no tema escuro
+export const ProvedorTema = ({ children }) => {
+  const [tema, setTema] = useState('dark'); //esta iniciando no tema escuro
 
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
+  const alternarTema = () => {
+    setTema((temaAnterior) => (temaAnterior === 'light' ? 'dark' : 'light'));
   };
 
-  const currentTheme = theme === 'light' ? lightTheme : darkTheme;
+  const temaAtual = tema === 'light' ? lightTheme : darkTheme;
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <StyledThemeProvider theme={currentTheme}>
+    <TemaContext.Provider value={{ tema, alternarTema }}>
+      <StyledThemeProvider theme={temaAtual}>
         <GlobalStyles />
         {children}
       </StyledThemeProvider>
-    </ThemeContext.Provider>
+    </TemaContext.Provider>
   );
 };
