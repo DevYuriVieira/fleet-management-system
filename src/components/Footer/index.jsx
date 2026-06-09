@@ -6,7 +6,7 @@ import {
   CopyrightArea,
   TeamList, 
   TeamMember 
-} from './styles';
+} from './style';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();

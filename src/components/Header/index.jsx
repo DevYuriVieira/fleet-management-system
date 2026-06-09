@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom'; 
-import { HeaderContainer, Logo, NavMenu, NavLinkStyled, AlertBadge } from './styles';
+import { HeaderContainer, Logo, NavMenu, NavLinkStyled, AlertBadge } from './style';
 import { FaCar, FaBell } from 'react-icons/fa'; 
 
 export default function Header() {
