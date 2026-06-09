@@ -1,38 +1,38 @@
 import React, { createContext, useState, useEffect } from 'react';
 
-export const FavoritesContext = createContext();
+export const FavoritosContext = createContext();
 
-export const FavoritesProvider = ({ children }) => {
-  const [favorites, setFavorites] = useState(() => {
-    const savedFavorites = localStorage.getItem('@FrotaControl:favorites');
-    return savedFavorites ? JSON.parse(savedFavorites) : [];
+export const ProvedorFavoritos = ({ children }) => {
+  const [favoritos, setFavoritos] = useState(() => {
+    const favoritosSalvos = localStorage.getItem('@FrotaControl:favoritos');
+    return favoritosSalvos ? JSON.parse(favoritosSalvos) : [];
   });
 
   useEffect(() => {
-    localStorage.setItem('@FrotaControl:favorites', JSON.stringify(favorites));
-  }, [favorites]);
+    localStorage.setItem('@FrotaControl:favoritos', JSON.stringify(favoritos));
+  }, [favoritos]);
 
   // funcao para adicionar/remover um veículo dos favoritos
-  const toggleFavorite = (vehicleId) => {
-    setFavorites((prevFavorites) => {
-      const isAlreadyFavorite = prevFavorites.includes(vehicleId);
+  const alternarFavorito = (veiculoId) => {
+    setFavoritos((favoritosAnteriores) => {
+      const favoritado = favoritosAnteriores.includes(veiculoId);
       
-      if (isAlreadyFavorite) {
-        return prevFavorites.filter((id) => id !== vehicleId);
+      if (favoritado) {
+        return favoritosAnteriores.filter((id) => id !== veiculoId);
       } else {
-        return [...prevFavorites, vehicleId];
+        return [...favoritosAnteriores, veiculoId];
       }
     });
   };
 
   // funcao para ver se o veículo específico esta favoritado
-  const isFavorite = (vehicleId) => {
-    return favorites.includes(vehicleId);
+  const eFavorito = (veiculoId) => {
+    return favoritos.includes(veiculoId);
   };
 
   return (
-    <FavoritesContext.Provider value={{ favorites, toggleFavorite, isFavorite }}>
+    <FavoritosContext.Provider value={{ favoritos, alternarFavorito, eFavorito }}>
       {children}
-    </FavoritesContext.Provider>
+    </FavoritosContext.Provider>
   );
 };

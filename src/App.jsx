@@ -1,6 +1,6 @@
-import { ThemeProvider } from './contexts/TemaContext';
-import { FleetProvider } from './contexts/FrotaContext';
-import { FavoritesProvider } from './contexts/FavoritosContext';
+import { ProvedorTema } from './contexts/TemaContext';
+import { ProvedorFrota } from './contexts/FrotaContext';
+import { ProvedorFavoritos } from './contexts/FavoritosContext';
 import AppRoutes from './routes/index';
 
 import { ToastContainer } from 'react-toastify';
@@ -8,14 +8,14 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
-    <ThemeProvider>
-      <FleetProvider>
-        <FavoritesProvider>
+    <ProvedorTema>
+      <ProvedorFrota>
+        <ProvedorFavoritos>
           <AppRoutes />
           <ToastContainer position="top-right" autoClose={3000} theme="colored" />
-        </FavoritesProvider>
-      </FleetProvider>
-    </ThemeProvider>
+        </ProvedorFavoritos>
+      </ProvedorFrota>
+    </ProvedorTema>
   );
 }
 
