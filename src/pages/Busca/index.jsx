@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { BarraPesquisa } from '../../components/BarraPesquisa';
 import { Filtros } from '../../components/Filtros';
-import { veiculosMock } from '../veiculosMock';
+import { veiculosMock } from '../Busca/veiculosMock';
 
 import {
 	Container,
@@ -22,12 +22,14 @@ export function Busca() {
 	const [anoSelecionado, setAnoSelecionado] = useState('');
 	const [situacaoSelecionada, setSituacaoSelecionada] = useState('');
 	const [ordenacao, setOrdenacao] = useState('');
-
+	const [modeloSelecionado, setModeloSelecionado] = useState('');
 	function limparFiltros() {
+		setBusca('');
 		setMarcaSelecionada('');
 		setAnoSelecionado('');
 		setSituacaoSelecionada('');
 		setOrdenacao('');
+		setModeloSelecionado('');
 	}
 
 	function filtrarVeiculos() {
@@ -35,25 +37,27 @@ export function Busca() {
 
 		let resultado = veiculosMock.filter((veiculo) => {
 			const buscaGlobal =
-				veiculo.placa.toLowerCase().includes(textoBusca) ||
-				veiculo.modelo.toLowerCase().includes(textoBusca) ||
-				veiculo.marca.toLowerCase().includes(textoBusca);
+				veiculo.placa?.toLowerCase().includes(textoBusca) ||
+				veiculo.modelo?.toLowerCase().includes(textoBusca) ||
+				veiculo.marca?.toLowerCase().includes(textoBusca);
 
 			const filtroMarca =
 				marcaSelecionada === '' || veiculo.marca === marcaSelecionada;
+			const filtroModelo =
+				modeloSelecionado === '' || veiculo.modelo === modeloSelecionado;
 			const filtroAno =
 				anoSelecionado === '' || veiculo.ano.toString() === anoSelecionado;
 			const filtroSituacao =
-				situacaoSelecionada === '' || veiculo.situacao === situacaoSelecionada;
+				situacaoSelecionada === '' || veiculo.situacaoManutencao === situacaoSelecionada;
 
-			return buscaGlobal && filtroMarca && filtroAno && filtroSituacao;
+			return buscaGlobal && filtroMarca && filtroModelo && filtroAno && filtroSituacao;
 		});
 
 		if (ordenacao === "menorValor") {
-			resultado = resultado.sort((a, b) => a.valor - b.valor);
+			resultado = [...resultado].sort((a, b) => a.valorFipe - b.valorFipe);
 		}
 		if (ordenacao === "maiorValor") {
-			resultado = resultado.sort((a, b) => b.valor - a.valor);
+			resultado = [...resultado].sort((a, b) => b.valorFipe - a.valorFipe);
 		}
 
 		return resultado;
@@ -72,7 +76,7 @@ export function Busca() {
 
 			<BarraPesquisa
 				valorBusca={busca}
-				setValorBusca={setBusca}
+				aoBuscar={setBusca}
 			/>
 
 			<Filtros
@@ -84,6 +88,8 @@ export function Busca() {
 				setSituacaoSelecionada={setSituacaoSelecionada}
 				ordenacao={ordenacao}
 				setOrdenacao={setOrdenacao}
+				modeloSelecionado={modeloSelecionado}
+				setModeloSelecionado={setModeloSelecionado}
 				limparFiltros={limparFiltros}
 			/>
 
@@ -91,7 +97,7 @@ export function Busca() {
 				{veiculosFiltrados.length} veiculo(s) encontrado(s)
 			</ResultadoTexto>
 
-			{veiculosFiltrados.lenght > 0 ? (
+			{veiculosFiltrados.length > 0 ? (
 				<ListaVeiculos>
 					{veiculosFiltrados.map((veiculo) => (
 						<CardTemporario key={veiculo.id}>

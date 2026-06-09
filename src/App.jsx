@@ -1,7 +1,6 @@
-import React from 'react';
 import { ThemeProvider } from './contexts/TemaContext';
 import { FleetProvider } from './contexts/FrotaContext';
-import { FavoritesProvider } from './contexts/FavoritosContext'; 
+import { FavoritesProvider } from './contexts/FavoritosContext';
 import AppRoutes from './routes/index';
 
 import { ToastContainer } from 'react-toastify';
@@ -21,3 +20,13 @@ function App() {
 }
 
 export default App;
+
+// import { Busca } from './pages/Busca';
+
+// function App() {
+//   return (
+//     <Busca />
+//   );
+// }
+
+// export default App;    ----> Teste Tutu

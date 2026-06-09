@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.main`
     min-height: 100vh;
     padding: 20px;
-		background-color: #2563EB; 
+	background-color: #0F172A; 
 `;
 
 export const Header = styled.section`
@@ -13,13 +13,13 @@ export const Header = styled.section`
 
 export const Titulo = styled.h1`
 	font-size: 36px;
-	color: #2563EB;
+	color: #1D4ED8;
 	margin-bottom: 8px;
 `;
 
 export const Subtitulo = styled.p`
 	font-size: 16px;
-	color: #2563EB;
+	color: #14B8A6;
 `;
 
 export const ResultadoTexto = styled.p`
@@ -39,7 +39,7 @@ export const ListaVeiculos = styled.section`
 
 export const CardTemporario = styled.div`
 	width: 280px;
-	background-color: #ffffff;
+	background-color: #1E293B;
 	border-radius: 14px;
 	padding: 20px;
 	box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
@@ -48,18 +48,18 @@ export const CardTemporario = styled.div`
 
 export const NomeVeiculo = styled.h2`
 	font-size: 20px;
-	color: #;
+	color: #F8FAFC;
 `;
 
 export const InfoVeiculo = styled.p`
 	font-size: 14px;
-	color: #555555;
+	color: #CBD5E1;
 	margin: 6px 0;
 `;
 
 export const MensagemVazia = styled.p`
 	text-align: center;
 	font-size: 18px;
-	color: #555555;
+	color: #14B8A6;
 	margin-top: 40px;
 `;

@@ -19,7 +19,7 @@ export const GrupoFiltro = styled.div`
 export const Label = styled.label`
     font-size: 14px;
     font-weight: 600;
-    color: #2563EB;
+    color: #1D4ED8;
 `;
 
 export const Select = styled.select`

@@ -9,6 +9,8 @@ import {
 export function Filtros({
 	marcaSelecionada,
 	setMarcaSelecionada,
+	modeloSelecionado,
+	setModeloSelecionado,
 	anoSelecionado,
 	setAnoSelecionado,
 	situacaoSelecionada,
@@ -25,16 +27,6 @@ export function Filtros({
 					<option value="">Todas</option>
 					<option value="Toyota">Toyota</option>
 					<option value="Honda">Honda</option>
-					<option value="Ford">Ford</option>
-				</Select>
-			</GrupoFiltro>
-
-			<GrupoFiltro>
-				<Label>Ano:</Label>
-				<Select value={anoSelecionado} onChange={(e) => setAnoSelecionado(e.target.value)}>
-					<option value="">Todas</option>
-					<option value="Toyota">Toyota</option>
-					<option value="Honda">Honda</option>
 					<option value="Volkswagen">Volkswagen</option>
 					<option value="Fiat">Fiat</option>
 					<option value="Renault">Renault</option>
@@ -45,7 +37,22 @@ export function Filtros({
 			</GrupoFiltro>
 
 			<GrupoFiltro>
-				<Label>Ano</Label>
+				<Label>Modelo:</Label>
+				<Select value={modeloSelecionado} onChange={(e) => setModeloSelecionado(e.target.value)}>
+					<option value="">Todos</option>
+					<option value="Corolla">Corolla</option>
+					<option value="Civic">Civic</option>
+					<option value="Saveiro">Saveiro</option>
+					<option value="Strada">Strada</option>
+					<option value="Duster">Duster</option>
+					<option value="Sprinter">Sprinter</option>
+					<option value="FH">FH</option>
+					<option value="S10">S10</option>
+				</Select>
+			</GrupoFiltro>
+
+			<GrupoFiltro>
+				<Label>Ano:</Label>
 				<Select value={anoSelecionado} onChange={(event) => setAnoSelecionado(event.target.value)}
 				>
 					<option value="">Todos</option>

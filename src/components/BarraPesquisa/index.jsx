@@ -1,13 +1,13 @@
 import { Container, InputBusca } from "./style";
 
-export function BarraPesquisa({ valorBusca, setValorBusca }) {
+export function BarraPesquisa({ valorBusca, aoBuscar }) {
 	return (
 		<Container>
 			<InputBusca
 				type="text"
 				placeholder="Buscar por placa, modelo ou marca..."
 				value={valorBusca}
-				onChange={(e) => setValorBusca(e.target.value)}
+				onChange={(e) => aoBuscar(e.target.value)}
 			/>
 		</Container>
 	);
