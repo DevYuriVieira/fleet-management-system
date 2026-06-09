@@ -13,12 +13,12 @@ export default function Footer() {
 
   
   const integrantes = [
-    { name: 'Arthur Carvalho', github: 'https://github.com/seu-usuario' },
-    { name: 'Jhonata Raibolt', github: 'https://github.com/usuario2' },
-    { name: 'Leilton', github: 'https://github.com/usuario3' },
-    { name: 'Yuri', github: 'https://github.com/usuario4' },
+    { name: 'Arthur Carvalho', github: 'https://github.com/TutuCarvalho' },
+    { name: 'Jhonata Raibolt', github: 'https://github.com/jhonataraibolt' },
+    { name: 'Leilton Braga', github: 'https://github.com/LeiltonBraga' },
+    { name: 'Yuri Vieria', github: 'https://github.com/DevYuriVieira' },
     { name: 'Lucas Alves', github: 'https://github.com/usuario5' },
-    { name: 'Romulo Evangelista', github: 'https://github.com/usuario6' },
+    { name: 'Romulo Evangelista', github: 'https://github.com/RomuloSEvangelista' },
   ];
 
   return (
