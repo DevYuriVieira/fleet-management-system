@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { BarraPesquisa } from '../../components/BarraPesquisa';
 import { Filtros } from '../../components/Filtros';
-import { veiculosMock } from '../Busca/veiculosMock';
+import { frotaLocal } from '../../data/Dados';
 
 import {
 	Container,
@@ -35,18 +35,22 @@ export function Busca() {
 	function filtrarVeiculos() {
 		const textoBusca = busca.toLowerCase();
 
-		let resultado = veiculosMock.filter((veiculo) => {
+		let resultado = frotaLocal.filter((veiculo) => {
+			const anoVeiculo = veiculo.ano.split("-")[0];
+
 			const buscaGlobal =
 				veiculo.placa?.toLowerCase().includes(textoBusca) ||
-				veiculo.modelo?.toLowerCase().includes(textoBusca) ||
-				veiculo.marca?.toLowerCase().includes(textoBusca);
+				veiculo.tipoVeiculo?.toLowerCase().includes(textoBusca) ||
+				veiculo.codigoMarca?.toLowerCase().includes(textoBusca) ||
+				veiculo.codigoModelo?.toLowerCase().includes(textoBusca) ||
+				veiculo.descricao?.toLowerCase().includes(textoBusca);
 
 			const filtroMarca =
 				marcaSelecionada === '' || veiculo.marca === marcaSelecionada;
 			const filtroModelo =
 				modeloSelecionado === '' || veiculo.modelo === modeloSelecionado;
 			const filtroAno =
-				anoSelecionado === '' || veiculo.ano.toString() === anoSelecionado;
+				anoSelecionado === '' || anoVeiculo === anoSelecionado;
 			const filtroSituacao =
 				situacaoSelecionada === '' || veiculo.situacaoManutencao === situacaoSelecionada;
 
@@ -110,7 +114,7 @@ export function Busca() {
 							</InfoVeiculo>
 
 							<InfoVeiculo>
-								<strong>Ano:</strong> {veiculo.ano}
+								<strong>Ano:</strong> {veiculo.ano.split("-")[0]}
 							</InfoVeiculo>
 
 							<InfoVeiculo>
