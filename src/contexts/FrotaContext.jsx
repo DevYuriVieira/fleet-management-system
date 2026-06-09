@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
-import {api} from '../services/api/api';
+import {getMarcasFipe} from '../services/getDetalhesVeiculo';
 
 export const FrotaContext = createContext();
 
@@ -13,8 +13,8 @@ export const ProvedorFrota = ({ children }) => {
     const buscarVeiculos = async () => {
       try {
         setCarregando(true);
-        const response = await api.get('/carros/marcas');
-        setVeiculos(response.data);
+        const response = await getMarcasFipe('carros');
+        setVeiculos(response);
       } catch (err) {
         setError('Erro ao carregar os dados da frota.');
       } finally {
