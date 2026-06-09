@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 // Exemplo de uso do Context para pegar alertas (Requisito 6)
 // import { useFrota } from '../../context/FrotaContext'; 
 =======
@@ -12,6 +13,14 @@ export default function Header() {
 <<<<<<< Updated upstream
   // Simulação dos alertas vindo do Context (mude para a lógica real do grupo depois)
 =======
+  
+>>>>>>> Stashed changes
+=======
+
+import { HeaderContainer, Logo, NavMenu, NavLinkStyled, AlertBadge } from './styles';
+import { FaCar, FaBell } from 'react-icons/fa'; 
+
+export default function Header() {
   
 >>>>>>> Stashed changes
   const totalAlertas = 3; 
