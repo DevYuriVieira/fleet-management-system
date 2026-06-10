@@ -1,8 +1,9 @@
-import React, { useContext, useEffect} from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FavoritosContext } from '../../contexts/FavoritosContext';
 import { FrotaContext } from '../../contexts/FrotaContext';
 import { toast } from 'react-toastify';
+import CardVeiculo from '../../components/CardVeiculo';
 import {
   FavoritosContainer,
   HeroSection,
@@ -17,15 +18,6 @@ import {
   SubtituloSecao,
   ContadorFavoritos,
   GridFavoritos,
-  CardFavorito,
-  ImagemVeiculo,
-  InfoVeiculo,
-  NomeVeiculo,
-  TagsVeiculo,
-  Tag,
-  AcoesBotoes,
-  BotaoDetalhes,
-  BotaoRemover,
   MensagemVazia,
   IconeVazio,
   TextoVazio,
@@ -35,7 +27,13 @@ import {
 const Favoritos = () => {
   const navigate = useNavigate();
   const { favoritos, alternarFavorito } = useContext(FavoritosContext);
-  const { veiculos, loading } = useContext(FrotaContext);
+  const { veiculos, loading, error } = useContext(FrotaContext);
+
+  useEffect(() => {
+    if (error) {
+      toast.error(error);
+    }
+  }, [error]);
 
   const veiculosFavoritados = veiculos.filter((veiculo) =>
     favoritos.includes(veiculo.id)
@@ -74,32 +72,8 @@ const Favoritos = () => {
             </ContadorFavoritos>
 
             <GridFavoritos>
-              {veiculosFavoritados.map((veiculo, index) => (
-                <CardFavorito key={veiculo.id} $delay={index * 0.08}>
-                  <ImagemVeiculo
-                    src={
-                      veiculo.imagem ||
-                      'https://placehold.co/400x200?text=Sem+Imagem'
-                    }
-                    alt={veiculo.nome}
-                  />
-                  <InfoVeiculo>
-                    <NomeVeiculo>{veiculo.nome}</NomeVeiculo>
-                    <TagsVeiculo>
-                      <Tag>🚗 {veiculo.tipo || 'Veículo'}</Tag>
-                      <Tag>📅 {veiculo.ano || 'N/A'}</Tag>
-                      <Tag>⚙️ {veiculo.status || 'Disponível'}</Tag>
-                    </TagsVeiculo>
-                    <AcoesBotoes>
-                      <BotaoDetalhes onClick={() => navigate(`/veiculo/${veiculo.id}`)}>
-                        Ver Detalhes
-                      </BotaoDetalhes>
-                      <BotaoRemover onClick={() => alternarFavorito(veiculo.id)}>
-                        ♡ Remover
-                      </BotaoRemover>
-                    </AcoesBotoes>
-                  </InfoVeiculo>
-                </CardFavorito>
+              {veiculosFavoritados.map((veiculo) => (
+                <CardVeiculo key={veiculo.id} veiculo={veiculo} />
               ))}
             </GridFavoritos>
           </>
