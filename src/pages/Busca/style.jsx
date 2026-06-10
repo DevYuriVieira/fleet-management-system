@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const Container = styled.main`
     min-height: 100vh;
     padding: 20px;
-	background-color: #0F172A; 
+	background-color: ${(props) => props.theme.background};
+  	color: ${(props) => props.theme.text}; 
 `;
 
 export const Header = styled.section`
@@ -13,19 +14,19 @@ export const Header = styled.section`
 
 export const Titulo = styled.h1`
 	font-size: 36px;
-	color: #1D4ED8;
+	color: ${(props) => props.theme.text};
 	margin-bottom: 8px;
 `;
 
 export const Subtitulo = styled.p`
 	font-size: 16px;
-	color: #14B8A6;
+	color: ${(props) => props.theme.text};
 `;
 
 export const ResultadoTexto = styled.p`
 	text-align: center;
 	font-size: 16px;
-	color: #2563EB;
+	color: ${(props) => props.theme.text};
 	margin-bottom: 24px;
 	font-weight: 600;
 `;
@@ -39,27 +40,36 @@ export const ListaVeiculos = styled.section`
 
 export const CardTemporario = styled.div`
 	width: 280px;
-	background-color: #1E293B;
+  	background-color: ${(props) => props.theme.surface};
+  	color: ${(props) => props.theme.text};
 	border-radius: 14px;
 	padding: 20px;
+	border: 1px solid ${(props) => props.theme.border};
 	box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
-	border-left: 5px solid #2563EB;
+	border-left: 5px solid ${(props) => props.theme.primary};
 `;
 
 export const NomeVeiculo = styled.h2`
 	font-size: 20px;
-	color: #F8FAFC;
+  	color: ${(props) => props.theme.text};
+	margin-bottom: 12px;
 `;
 
 export const InfoVeiculo = styled.p`
 	font-size: 14px;
-	color: #CBD5E1;
-	margin: 6px 0;
+  	color: ${(props) => props.theme.text};
+	opacity: 0.85;
+  	margin: 6px 0;
+
+  	strong {
+ 		color: ${(props) => props.theme.primary};
+  	}
 `;
 
 export const MensagemVazia = styled.p`
 	text-align: center;
 	font-size: 18px;
-	color: #14B8A6;
+  	color: ${(props) => props.theme.text};
+  	opacity: 0.75;
 	margin-top: 40px;
 `;

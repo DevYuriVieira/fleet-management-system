@@ -19,22 +19,22 @@ export const GrupoFiltro = styled.div`
 export const Label = styled.label`
     font-size: 14px;
     font-weight: 600;
-    color: #1D4ED8;
+    color: ${(props) => props.theme.text};
 `;
 
 export const Select = styled.select`
     min-width: 180px;
     padding: 12px 14px;
     border-radius: 10px;
-    border: 1px solid #E5E7EB;
-    background-color: #111827;
-    color: #2563EB;
+  	border: 1px solid ${(props) => props.theme.border};
+  	background-color: ${(props) => props.theme.surface};
+  	color: ${(props) => props.theme.text};
     font-size: 15px;
     outline: none;
     cursor: pointer;
 
     &:focus {
-        border-color: #2563eB;
+    		border-color: ${(props) => props.theme.primary};
         box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
     }
 `;
@@ -43,7 +43,7 @@ export const BotaoLimpar = styled.button`
     padding: 12px 18px;
     border-radius: 10px;
     border: none;
-    background-color: #2563EB;
+    border-color: ${(props) => props.theme.primary};
     color: #ffffff;
     font-size: 15px;
     font-weight: 600;
