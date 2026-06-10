@@ -3,122 +3,138 @@ import styled from 'styled-components';
 export const FooterContainer = styled.footer`
   background-color: #121214;
   border-top: 1px solid #29292e;
-  padding: 1.5rem 2rem;
-  margin-top: auto; /* Garante que se o conteúdo for curto, o footer fique embaixo */
+  padding: 3rem 2rem 1.5rem 2rem;
+  margin-top: auto;
   width: 100%;
 `;
 
-export const FooterContent = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+export const FooterGrid = styled.div`
   max-width: 1200px;
   margin: 0 auto;
-  color: #8d8d99;
-  font-size: 0.9rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid #29292e;
 
-  strong {
-    color: #00b37e;
+  @media (max-width: 968px) {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  span {
-    font-size: 0.85rem;
-  }
-
-  @media (max-width: 600px) {
-    flex-direction: column;
-    gap: 0.5rem;
+  @media (max-width: 550px) {
+    grid-template-columns: 1fr;
     text-align: center;
   }
 `;
 
-import styled from 'styled-components';
-
-export const FooterContainer = styled.footer`
-  background-color: #121214;
-  border-top: 1px solid #29292e;
-  padding: 1.5rem 2rem;
-  margin-top: auto; /* Garante que se o conteúdo for curto, o footer fique embaixo */
-  width: 100%;
-`;
-
-export const FooterContent = styled.div`
+export const FooterColumn = styled.div`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  color: #8d8d99;
-  font-size: 0.9rem;
+  flex-direction: column;
+  gap: 0.75rem;
 
-  strong {
-    color: #00b37e;
-  }
-
-  span {
-    font-size: 0.85rem;
-  }
-
-  @media (max-width: 600px) {
-    flex-direction: column;
+  .logo-area {
+    display: flex;
+    align-items: center;
     gap: 0.5rem;
-    text-align: center;
-  }
-`;
-export const CopyrightArea = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-`;
 
-export const TeamList = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+    h3 {
+      color: #ffffff;
+      font-size: 1.25rem;
+    }
+  }
 
   h4 {
+    color: #ffffff;
+    font-size: 1rem;
     margin-bottom: 0.5rem;
-    color: #c4c4cc;
-    font-size: 0.9rem;
+    font-weight: 600;
   }
 
-  ul {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: flex-end;
+  p {
+    color: #8d8d99;
+    font-size: 0.875rem;
+    line-height: 1.5;
   }
 
-  @media (max-width: 600px) {
+  p.hours {
+    color: #7c7c8a;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+  }
+
+  span {
+    color: #7c7c8a;
+    font-size: 0.875rem;
+  }
+
+  a {
+    color: #8d8d99;
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #00b37e;
+    }
+  }
+
+  @media (max-width: 550px) {
     align-items: center;
-    ul {
+
+    .logo-area {
       justify-content: center;
     }
   }
 `;
 
-export const TeamMember = styled.li`
+export const FooterBottom = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 1.5rem;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 0.4rem;
-  background-color: #202024;
-  padding: 0.4rem 0.8rem;
-  border-radius: 6px;
-  border: 1px solid #29292e;
 
-  span {
-    color: #c4c4cc;
+  p {
+    color: #7c7c8a;
+    font-size: 0.85rem;
   }
 
-  a {
-    color: #00b37e;
+  .badges {
     display: flex;
-    align-items: center;
-    transition: filter 0.2s;
+    gap: 0.5rem;
 
-    &:hover {
-      filter: brightness(1.2);
+    span {
+      background-color: #202024;
+      border: 1px solid #29292e;
+      color: #c4c4cc;
+      font-size: 0.75rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 6px;
     }
+  }
+
+  @media (max-width: 550px) {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+`;
+
+export const SocialLink = styled.a`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #8d8d99;
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #00b37e;
+  }
+
+  @media (max-width: 550px) {
+    justify-content: center;
   }
 `;

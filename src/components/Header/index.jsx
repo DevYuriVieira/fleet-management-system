@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom'; 
-import { 
-  HeaderContainer, 
-  Logo, 
-  NavMenu, 
-  NavLinkStyled, 
+import { NavLink } from 'react-router-dom';
+import {
+  HeaderContainer,
+  Logo,
+  NavMenu,
+  NavLinkStyled,
   AlertBadge,
-  HamburgerButton
-} from './style'; 
-import { FaCar, FaBell, FaBars, FaTimes } from 'react-icons/fa'; 
+  HamburgerButton,
+  ThemeButton
+} from './style';
+import { FaCar, FaBell, FaBars, FaTimes, FaSun, FaMoon } from 'react-icons/fa';
 
 export default function Header() {
-  const totalAlertas = 3; 
+  const totalAlertas = 3;
   const [isOpen, setIsOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
+
   const closeMenu = () => setIsOpen(false);
 
   return (
@@ -22,12 +25,18 @@ export default function Header() {
         <span>FrotaControl</span>
       </Logo>
 
-      {}
-      <HamburgerButton onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-      </HamburgerButton>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+        <ThemeButton onClick={() => setIsDarkMode(!isDarkMode)}>
+          {isDarkMode
+            ? <FaSun size={20} color="#f1c40f" />
+            : <FaMoon size={20} color="#95a5a6" />}
+        </ThemeButton>
 
-      {}
+        <HamburgerButton onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+        </HamburgerButton>
+      </div>
+
       <NavMenu className={isOpen ? 'open' : ''}>
         <NavLinkStyled to="/" end onClick={closeMenu}>
           Home
@@ -41,7 +50,6 @@ export default function Header() {
         <NavLinkStyled to="/empresa" onClick={closeMenu}>
           Empresa
         </NavLinkStyled>
-        
         <NavLinkStyled to="/alertas" className="alert-link" onClick={closeMenu}>
           <FaBell /> Alertas
           {totalAlertas > 0 && <AlertBadge>{totalAlertas}</AlertBadge>}
