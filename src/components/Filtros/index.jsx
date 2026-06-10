@@ -17,7 +17,11 @@ export function Filtros({
 	setSituacaoSelecionada,
 	ordenacao,
 	setOrdenacao,
-	limparFiltros
+	limparFiltros,
+	marcasDisponiveis = [],
+	modelosDisponiveis = [],
+	anosDisponiveis = [],
+	situacoesDisponiveis = []
 }) {
 	return (
 		<Container>
@@ -25,14 +29,10 @@ export function Filtros({
 				<Label>Marca:</Label>
 				<Select value={marcaSelecionada} onChange={(e) => setMarcaSelecionada(e.target.value)}>
 					<option value="">Todas</option>
-					<option value="Toyota">Toyota</option>
-					<option value="Honda">Honda</option>
-					<option value="Volkswagen">Volkswagen</option>
-					<option value="Fiat">Fiat</option>
-					<option value="Renault">Renault</option>
-					<option value="Mercedes-Benz">Mercedes-Benz</option>
-					<option value="Volvo">Volvo</option>
-					<option value="Chevrolet">Chevrolet</option>
+
+					{marcasDisponiveis.map((marca) => (
+						<option key={marca} value={marca}> {marca} </option>
+					))}
 				</Select>
 			</GrupoFiltro>
 
@@ -40,41 +40,33 @@ export function Filtros({
 				<Label>Modelo:</Label>
 				<Select value={modeloSelecionado} onChange={(e) => setModeloSelecionado(e.target.value)}>
 					<option value="">Todos</option>
-					<option value="Corolla">Corolla</option>
-					<option value="Civic">Civic</option>
-					<option value="Saveiro">Saveiro</option>
-					<option value="Strada">Strada</option>
-					<option value="Duster">Duster</option>
-					<option value="Sprinter">Sprinter</option>
-					<option value="FH">FH</option>
-					<option value="S10">S10</option>
+
+					{modelosDisponiveis.map((modelo) => (
+						<option key={modelo} value={modelo}> {modelo} </option>
+					))}
 				</Select>
 			</GrupoFiltro>
 
 			<GrupoFiltro>
 				<Label>Ano:</Label>
-				<Select value={anoSelecionado} onChange={(event) => setAnoSelecionado(event.target.value)}
-				>
+				<Select value={anoSelecionado} onChange={(e) => setAnoSelecionado(e.target.value)}>
 					<option value="">Todos</option>
-					<option value="2024">2024</option>
-					<option value="2023">2023</option>
-					<option value="2022">2022</option>
-					<option value="2021">2021</option>
-					<option value="2020">2020</option>
-					<option value="2019">2019</option>
-					<option value="2018">2018</option>
-					<option value="2017">2017</option>
+					{anosDisponiveis.map((ano) => (
+						<option key={ano} value={ano}> {ano} </option>
+					))}
 				</Select>
 			</GrupoFiltro>
 
 			<GrupoFiltro>
 				<Label>Manutenção</Label>
-				<Select value={situacaoSelecionada} onChange={(event) => setSituacaoSelecionada(event.target.value)}
-				>
-					<option value="">Todas</option>
-					<option value="Em dia">Em dia</option>
-					<option value="Próxima">Próxima</option>
-					<option value="Vencida">Vencida</option>
+				<Select value={situacaoSelecionada} onChange={(e) => setSituacaoSelecionada(e.target.value)}>
+					<option value="">Todos</option>
+
+					{situacoesDisponiveis.map((situacao) => (
+						<option key={situacao} value={situacao}>
+							{situacao}
+						</option>
+					))}
 				</Select>
 			</GrupoFiltro>
 

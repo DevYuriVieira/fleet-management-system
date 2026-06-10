@@ -1,4 +1,4 @@
-import { api } from "./api";
+import { api } from "./api/api";
 
 export const getDetalhesVeiculoFipe = async (tipoVeiculo, codigoMarca, codigoModelo, ano) => {
   try {
