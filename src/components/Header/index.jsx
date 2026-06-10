@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import {
-  HeaderContainer,
-  Logo,
-  NavMenu,
-  NavLinkStyled,
+import { NavLink } from 'react-router-dom'; 
+import { 
+  HeaderContainer, 
+  Logo, 
+  NavMenu, 
+  NavLinkStyled, 
   AlertBadge,
   HamburgerButton,
   ThemeButton
-} from './style';
-import { FaCar, FaBell, FaBars, FaTimes, FaSun, FaMoon } from 'react-icons/fa';
+} from './style'; 
+import { FaCar, FaStar, FaBars, FaTimes, FaSun, FaMoon } from 'react-icons/fa'; 
 
-export default function Header() {
-  const totalAlertas = 3;
+export default function Header({ totalFavoritos = 0 }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
 
@@ -27,9 +26,7 @@ export default function Header() {
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
         <ThemeButton onClick={() => setIsDarkMode(!isDarkMode)}>
-          {isDarkMode
-            ? <FaSun size={20} color="#f1c40f" />
-            : <FaMoon size={20} color="#95a5a6" />}
+          {isDarkMode ? <FaSun size={20} color="#f1c40f" /> : <FaMoon size={20} color="#95a5a6" />}
         </ThemeButton>
 
         <HamburgerButton onClick={() => setIsOpen(!isOpen)}>
@@ -50,9 +47,10 @@ export default function Header() {
         <NavLinkStyled to="/empresa" onClick={closeMenu}>
           Empresa
         </NavLinkStyled>
-        <NavLinkStyled to="/alertas" className="alert-link" onClick={closeMenu}>
-          <FaBell /> Alertas
-          {totalAlertas > 0 && <AlertBadge>{totalAlertas}</AlertBadge>}
+        
+        <NavLinkStyled to="/favoritos" className="alert-link" onClick={closeMenu}>
+          <FaStar /> Favoritos
+          {totalFavoritos > 0 && <AlertBadge>{totalFavoritos}</AlertBadge>}
         </NavLinkStyled>
       </NavMenu>
     </HeaderContainer>
