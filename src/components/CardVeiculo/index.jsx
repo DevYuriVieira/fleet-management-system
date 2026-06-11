@@ -23,9 +23,7 @@ const statusConfig = {
 };
 
 const getStatusInfo = (status) => {
-  const chave = status?.toLowerCase()?.replace(/[çã]/g, (c) =>
-    c === 'ç' ? 'c' : 'a'
-  ) || '';
+  const chave = status?.toLowerCase()?.normalize('NFD').replace(/[\u0300-\u036f]/g, '') || '';
 
   if (chave.includes('manuten')) return statusConfig.manutencao;
   if (chave.includes('inativo')) return statusConfig.inativo;
@@ -48,14 +46,16 @@ const CardVeiculo = ({ veiculo }) => {
   const navigate = useNavigate();
   const statusInfo = getStatusInfo(veiculo.status);
 
+  const imagemCapa = veiculo.imagens?.[0] || null;
+
   const handleVerDetalhes = () => {
     navigate(`/veiculo/${veiculo.id}`);
   };
 
   return (
     <CardContainer onClick={handleVerDetalhes}>
-      {veiculo.imagem ? (
-        <CardImagem src={veiculo.imagem} alt={`${veiculo.marca} ${veiculo.modelo}`} />
+      {imagemCapa ? (
+        <CardImagem src={imagemCapa} alt={`${veiculo.marca} ${veiculo.modelo}`} />
       ) : (
         <ImagemPlaceholder>🚗</ImagemPlaceholder>
       )}
@@ -78,7 +78,7 @@ const CardVeiculo = ({ veiculo }) => {
           {veiculo.quilometragem !== undefined && (
             <InfoItem>
               <InfoLabel>Km</InfoLabel>
-              <InfoValor>{Number(veiculo.quilometragem).toLocaleString('pt-BR')} km</InfoValor>
+              <InfoValor>{veiculo.quilometragem}</InfoValor>
             </InfoItem>
           )}
         </CardInfo>
