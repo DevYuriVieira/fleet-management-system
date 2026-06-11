@@ -38,9 +38,9 @@ export default function Footer() {
         <FooterColumn>
           <h4>Navegação</h4>
           <a href="/">Início</a>
-          <a href="/manutencoes">Manutenções</a>
-          <a href="/custos">Custos</a>
-          <a href="/alertas">Alertas</a>
+          <a href="/veiculos">Veículos</a>
+          <a href="/empresa">Empresa</a>
+          <a href="/favoritos">Favoritos</a>
         </FooterColumn>
 
         <FooterColumn>

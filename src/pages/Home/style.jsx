@@ -197,17 +197,10 @@ export const SubtituloSecao = styled.p`
 `;
 
 export const GridFuncionalidades = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
-
-  @media (max-width: 900px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (max-width: 480px) {
-    grid-template-columns: 1fr;
-  }
+  justify-content: center;
 `;
 
 export const CardFuncionalidade = styled.div`
@@ -219,6 +212,15 @@ export const CardFuncionalidade = styled.div`
   cursor: pointer;
   transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
   animation: ${fadeIn} 0.5s ease-out ${({ $delay }) => $delay || 0}s both;
+  width: calc((100% - 40px) / 3);
+
+  @media (max-width: 900px) {
+    width: calc((100% - 20px) / 2);
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+  }
 
   &:hover {
     transform: translateY(-4px);

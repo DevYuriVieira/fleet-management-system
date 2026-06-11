@@ -41,7 +41,6 @@ const funcionalidades = [
   { id: 'dashboard', icone: '📊', titulo: 'Dashboard', descricao: 'Visão geral da frota com indicadores de desempenho e estatísticas em tempo real.', rota: '/' },
   { id: 'veiculos', icone: '🚗', titulo: 'Gestão de Veículos', descricao: 'Cadastre, edite e gerencie todos os veículos da sua frota em um só lugar.', rota: '/veiculos' },
   { id: 'busca', icone: '🔍', titulo: 'Consulta FIPE', descricao: 'Consulte valores atualizados da tabela FIPE para qualquer veículo do mercado.', rota: '/busca' },
-  { id: 'manutencao', icone: '🔧', titulo: 'Manutenção', descricao: 'Controle revisões, trocas de óleo e manutenções preventivas da sua frota.', rota: '/manutencao' },
   { id: 'favoritos', icone: '⭐', titulo: 'Favoritos', descricao: 'Acesse rapidamente os veículos mais importantes e acompanhados por você.', rota: '/favoritos' },
   { id: 'empresa', icone: '🏢', titulo: 'Dados da Empresa', descricao: 'Consulte CNPJ e CEP para manter os dados empresariais sempre atualizados.', rota: '/empresa' },
 ];
