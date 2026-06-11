@@ -6,8 +6,8 @@ export const HeaderContainer = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 1.2rem 2rem;
-  background-color: #121214;
-  border-bottom: 1px solid #29292e;
+  background-color: ${({ theme }) => theme.surface};
+  border-bottom: 1px solid ${({ theme }) => theme.border};
   position: sticky;
   top: 0;
   z-index: 100;
@@ -28,39 +28,17 @@ export const Logo = styled(NavLink)`
   }
 `;
 
-export const ThemeButton = styled.button`
-  background: #202024;
-  border: 1px solid #29292e;
-  padding: 0.6rem;
-  border-radius: 8px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease;
-  z-index: 110;
-
-  &:hover {
-    background: #29292e;
-    transform: scale(1.05);
-  }
-
-  &:active {
-    transform: scale(0.95);
-  }
-`;
-
 export const HamburgerButton = styled.button`
   display: none;
   background: none;
   border: none;
-  color: #c4c4cc;
+  color: ${({ theme }) => theme.text}aa;
   cursor: pointer;
   z-index: 110;
   transition: color 0.2s ease;
 
   &:hover {
-    color: #ffffff;
+    color: ${({ theme }) => theme.text};
   }
 
   @media (max-width: 768px) {
@@ -79,8 +57,8 @@ export const NavMenu = styled.nav`
     right: -100%;
     width: 70%;
     height: 100vh;
-    background-color: #121214;
-    border-left: 1px solid #29292e;
+    background-color: ${({ theme }) => theme.surface};
+    border-left: 1px solid ${({ theme }) => theme.border};
     flex-direction: column;
     justify-content: center;
     gap: 2rem;
@@ -94,7 +72,7 @@ export const NavMenu = styled.nav`
 `;
 
 export const NavLinkStyled = styled(NavLink)`
-  color: #c4c4cc;
+  color: ${({ theme }) => theme.text}aa;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s ease;
@@ -105,7 +83,7 @@ export const NavLinkStyled = styled(NavLink)`
 
   &:hover,
   &.active {
-    color: #ffffff;
+    color: ${({ theme }) => theme.text};
   }
 
   &.active {
@@ -114,10 +92,10 @@ export const NavLinkStyled = styled(NavLink)`
   }
 
   &.alert-link {
-    background: #202024;
+    background: ${({ theme }) => theme.background};
     padding: 0.5rem 0.8rem;
     border-radius: 6px;
-    border: 1px solid #29292e;
+    border: 1px solid ${({ theme }) => theme.border};
   }
 
   @media (max-width: 768px) {
@@ -147,5 +125,26 @@ export const AlertBadge = styled.span`
     position: relative;
     top: 0;
     right: 0;
+  }
+`;
+
+export const ThemeButton = styled.button`
+  background: ${({ theme }) => theme.background};
+  border: 1px solid ${({ theme }) => theme.border};
+  padding: 0.6rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: ${({ theme }) => theme.border};
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
   }
 `;
