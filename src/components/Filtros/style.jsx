@@ -42,8 +42,8 @@ export const Select = styled.select`
 export const BotaoLimpar = styled.button`
     padding: 12px 18px;
     border-radius: 10px;
-    border: none;
-    border-color: ${(props) => props.theme.primary};
+    border: 1px solid ${(props) => props.theme.primary};
+    background-color: ${(props) => props.theme.primary};
     color: #ffffff;
     font-size: 15px;
     font-weight: 600;
