@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import { FaHeart } from "react-icons/fa";
 import { ImArrowLeft2 } from "react-icons/im";
 import { ImArrowRight2 } from "react-icons/im";
 import { frotaLocal } from "../../data/Dados.jsx";
@@ -92,7 +91,7 @@ export const DetalhesVeiculo = () => {
     return (
       <Container>
         <h2>Veículo não encontrado.</h2>
-        <LinkVoltar><Link to="/">⬅ Voltar ao Início</Link></LinkVoltar>
+        <LinkVoltar><Link to="/veiculos">⬅ Voltar para a listagem</Link></LinkVoltar>
       </Container>
     );
   }

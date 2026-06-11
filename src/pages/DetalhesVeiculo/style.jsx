@@ -64,9 +64,9 @@ export const TagStatus = styled.span`
   color: ${(props) => (props.ativo ? "#4ADE80" : props.theme.text)};
   border: 1px solid ${(props) => (props.ativo ? "#22C55E" : props.theme.border)};
   padding: 8px 16px;
-  border-radius: 9999px;
+  border-radius: 16px;
   font-weight: 600;
-  font-size: 0.875rem;
+  font-size: 14px;
 `;
 
 export const ContentWrapper = styled.div`
