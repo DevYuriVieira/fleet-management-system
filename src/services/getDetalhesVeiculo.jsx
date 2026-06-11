@@ -1,4 +1,4 @@
-import { api } from "./api/api.jsx";
+import { api } from "./api/api";
 
 export const getDetalhesVeiculoFipe = async (tipoVeiculo, codigoMarca, codigoModelo, ano) => {
   try {
@@ -6,6 +6,6 @@ export const getDetalhesVeiculoFipe = async (tipoVeiculo, codigoMarca, codigoMod
     return response.data;
   } catch (error) {
     console.error("Erro no Service da FIPE:", error);
-    throw error; 
+    throw error;
   }
 };

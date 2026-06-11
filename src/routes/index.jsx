@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Footer from "../components/Footer";
@@ -29,7 +28,7 @@ const LayoutPadrao = () => {
 
 const AppRoutes = () => {
   return (
-    <BrowserRouter> 
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/veiculos" element={<Veiculos />} />
