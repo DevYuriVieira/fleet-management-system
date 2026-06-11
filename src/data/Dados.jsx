@@ -68,7 +68,9 @@ export const frotaLocal = [
     descricao: "Veículo recém-faturado com quilometragem irrisória. Condição de zero quilômetro, com IPVA quitado. Excelente oportunidade para aquisição imediata, sem necessidade de aguardar prazos de fabricação.",
     situacaoManutencao: "Em dia",
     favoritado: true,
-    imagens: ["https://www.comprecar.com.br/storage/vehicles/big/4535c930-61ac-449d-80d6-b835030f3077.webp"]
+    imagens: ["https://www.comprecar.com.br/storage/vehicles/big/4535c930-61ac-449d-80d6-b835030f3077.webp",
+      "https://www.comprecar.com.br/storage/vehicles/big/0d192a63-54b3-47a8-a837-f1017691aa79.webp?v=1781207493"
+    ]
   },
   {
     id: 6,
