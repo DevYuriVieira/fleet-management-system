@@ -1,6 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+
+import { Busca } from "../pages/Busca";
+import { DetalhesVeiculo } from "../pages/DetalhesVeiculo";
+import { Page404 } from "../pages/NotFound/Page404.jsx";
 import Home from '../pages/Home';
 import Veiculos from '../pages/Veiculos';
 import DetalhesVeiculo from '../pages/DetalhesVeiculo';
@@ -8,6 +14,18 @@ import Favoritos from '../pages/Favoritos';
 import Busca from '../pages/Busca';
 import Empresa from '../pages/Empresa';
 import Manutencao from '../pages/Manutencao';
+
+const LayoutPadrao = () => {
+  return (
+    <>
+      <Header />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
+    </>
+  );
+};
 
 const AppRoutes = () => {
   return (
