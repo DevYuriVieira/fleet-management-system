@@ -12,11 +12,11 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const integrantes = [
-    { name: 'Arthur Carvalho',    github: 'https://github.com/TutuCarvalho' },
-    { name: 'Jhonata Raibolt',    github: 'https://github.com/jhonataraibolt' },
-    { name: 'Leilton Braga',      github: 'https://github.com/LeiltonBraga' },
-    { name: 'Yuri Vieria',        github: 'https://github.com/DevYuriVieira' },
-    { name: 'Lucas Alves',        github: 'https://github.com/usuario5' },
+    { name: 'Arthur Carvalho', github: 'https://github.com/TutuCarvalho' },
+    { name: 'Jhonata Raibolt', github: 'https://github.com/jhonataraibolt' },
+    { name: 'Leilton Braga', github: 'https://github.com/LeiltonBraga' },
+    { name: 'Yuri Vieira', github: 'https://github.com/DevYuriVieira' },
+    { name: 'Lucas Alves', github: 'https://github.com/usuario5' },
     { name: 'Romulo Evangelista', github: 'https://github.com/RomuloSEvangelista' },
   ];
 
