@@ -20,13 +20,3 @@ function App() {
 }
 
 export default App;
-
-// import { Busca } from './pages/Busca';
-
-// function App() {
-//   return (
-//     <Busca />
-//   );
-// }
-
-// export default App;    ----> Teste Tutu
