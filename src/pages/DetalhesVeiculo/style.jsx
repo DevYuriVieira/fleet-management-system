@@ -19,7 +19,7 @@ export const LinkVoltar = styled.div`
   a {
     display: inline-flex;
     align-items: center;
-    color: ${({ theme }) => theme.border};
+    color: ${({ theme }) => theme.secondary};
     text-decoration: none;
     font-weight: 600;
     font-size: 15px;
@@ -185,7 +185,7 @@ export const CardDetalhes = styled.div`
   }
 
   h3 {
-    color: ${({ theme }) => theme.border};
+    color: ${({ theme }) => theme.text};
     font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 0.05em;

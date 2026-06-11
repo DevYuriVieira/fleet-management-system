@@ -66,6 +66,7 @@ export const frotaLocal = [
     quilometragem: "800 km",
     status: "ativo",
     descricao: "Veículo recém-faturado com quilometragem irrisória. Condição de zero quilômetro, com IPVA quitado. Excelente oportunidade para aquisição imediata, sem necessidade de aguardar prazos de fabricação.",
+    situacaoManutencao: "Em dia",
     favoritado: true,
     imagens: ["https://www.comprecar.com.br/storage/vehicles/big/4535c930-61ac-449d-80d6-b835030f3077.webp"]
   },
@@ -93,6 +94,7 @@ export const frotaLocal = [
     quilometragem: "68.000 km",
     status: "ativo",
     descricao: "Motocicleta com excelente eficiência energética e baixo custo de manutenção, ideal para mobilidade urbana e logística. Componentes de transmissão substituídos recentemente e fluídos novos. Documentação regularizada.",
+    situacaoManutencao: "Próxima",
     favoritado: true,
     imagens: ["https://storage.googleapis.com/images-homolog-moto.usadosbr.com/img/2012/03/30/img49834-1333129044-v580x435.jpg  "]
   },
@@ -106,6 +108,7 @@ export const frotaLocal = [
     quilometragem: "45.300 km",
     status: "manutencao",
     descricao: "Motocicleta em estado de conservação premium, com uso restrito e armazenamento em ambiente coberto. Equipada com sistema de exaustão esportivo e pneus novos. Alto padrão de acabamento.",
+    situacaoManutencao: "Em dia",
     favoritado: true,
     imagens: ["https://production.autoforce.com/uploads/used_model/profile_image/26703430/used_model_webp_comprar-xtz-150-crosser-s-flex-yamaha-xtz-150-crosser-s-flex-vermelho-2024-4912_88dbf9fa79.jpg.webp"]
   },
